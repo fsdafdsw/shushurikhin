@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  <title>Вячеслав Шушурихин — Редактор и Промпт‑инженер</title>
+  <meta name="description" content="Портфолио редактора и журналиста Вячеслава Шушурихина. Промпт‑инжиниринг, разработка AI-пайплайнов, тексты о технологиях (FinTech, EdTech) и бизнесе." />
+  <meta name="keywords" content="редактор, промпт-инженер, AI, копирайтинг, журналист, тексты, нейросети, Вячеслав Шушурихин" />
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="canonical" href="https://shushurikhin.tiiny.site/" />
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Вячеслав Шушурихин — Редактор и Промпт-инженер">
+  <meta property="og:description" content="Объединяю точность журналистики с мощью AI. Настраиваю процессы генерации контента.">
+  <meta property="og:url" content="https://shushurikhin.tiiny.site/">
+  <meta property="og:site_name" content="Портфолио Вячеслава Шушурихина">
+  <meta property="og:image" content="https://shushurikhin.tiiny.site/og-image.jpg"> 
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✍️</text></svg>">
+
+  <meta name="theme-color" content="#fdf0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Вячеслав Шушурихин",
+    "url": "https://shushurikhin.tiiny.site",
+    "jobTitle": "Редактор и Промпт-инженер",
+    "description": "Специалист по созданию контента с использованием AI, журналист, редактор.",
+    "knowsAbout": ["Journalism", "Prompt Engineering", "Artificial Intelligence", "Editing", "Copywriting"],
+    "sameAs": [
+      "https://t.me/shushurikhin",
+      "https://vc.ru/", 
+      "https://habr.com/"
+    ]
+  }
+  </script>
+
+  <style>
+    /* --- DESIGN TOKENS 2025 --- */
+    :root {
+      --bg: #fdf0e6; 
+      --paper: #fffbf7; 
+      --surface: #f6ece6;
+      --ink: #1a1a18;
+      --ink-muted: #6f6962;
+      --line: rgba(26, 26, 24, 0.08);
+      --line-strong: rgba(26, 26, 24, 0.15);
+      --accent: #0b3d91;      
+      --accent-code: #2e7d32; 
+      --accent-glow: 11, 61, 145;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(50, 50, 93, 0.04);
+      --shadow-hover: 0 10px 25px -5px rgba(50, 50, 93, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
+    }
+
+    .dark {
+      --bg: #0d0e11;
+      --paper: #15161a;
+      --surface: #1c1e24;
+      --ink: #eef1f5;
+      --ink-muted: #949aa6;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.15);
+      --accent: #4d8aff;
+      --accent-code: #4caf50;
+      --accent-glow: 77, 138, 255;
+      --shadow-card: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* --- BASE --- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    
+    body {
+      margin: 0; font-family: var(--font-sans); color: var(--ink); background-color: var(--bg);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1;
+      background-image: var(--noise); pointer-events: none; 
+      mix-blend-mode: overlay; opacity: 0.6;
+    }
+
+    .ambient-glow {
+      position: fixed; pointer-events: none; z-index: -1; inset: 0;
+      background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.5), transparent 40%);
+      mix-blend-mode: overlay;
+      transition: opacity 0.5s;
+    }
+    .dark .ambient-glow {
+      background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(77, 138, 255, 0.08), transparent 40%);
+      mix-blend-mode: screen;
+    }
+
+    h1, h2, h3 { font-family: var(--font-serif); font-weight: 700; margin: 0; line-height: 1.1; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.2rem, 6vw, 4.5rem); }
+    p { margin: 0 0 1em; }
+    a { color: inherit; text-decoration: none; transition: 0.2s; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; position: relative; z-index: 1; }
+    .text-muted { color: var(--ink-muted); }
+    .chip {
+      display: inline-flex; align-items: center; padding: 4px 10px;
+      border-radius: 99px; border: 1px solid var(--line);
+      background: var(--paper); font-size: 0.75rem; font-weight: 500; color: var(--ink-muted);
+      transition: all 0.2s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); background: var(--bg); }
+
+    /* --- NAV --- */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0;
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      backdrop-filter: blur(12px) saturate(160%);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    
+    .nav-links { 
+      display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; padding-right: 12px;
+      mask-image: linear-gradient(to right, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    
+    .nav-link {
+      padding: 8px 14px; border-radius: 99px; font-size: 0.85rem; font-weight: 500; color: var(--ink-muted);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-link:hover { color: var(--ink); background: var(--line); }
+    .nav-link.active { color: var(--ink); background: var(--paper); font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+
+    .nav-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+
+    /* --- UI ELEMENTS --- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 99px; font-weight: 500; font-size: 0.9rem;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(0.96); }
+    .btn-primary { background: var(--ink); color: var(--bg); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+    
+    .btn-outline { background: var(--paper); border: 1px solid var(--line); color: var(--ink); }
+    
+    @media (max-width: 360px) { .btn { padding: 10px 14px; } .btn span { display: none; } }
+
+    .theme-toggle {
+      width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+      position: relative; overflow: hidden; flex-shrink: 0; transition: transform 0.2s;
+    }
+    .theme-toggle:hover { transform: rotate(15deg); border-color: var(--ink-muted); }
+    .theme-toggle svg { position: absolute; transition: transform 0.5s, opacity 0.5s; }
+    .dark .icon-sun { transform: rotate(90deg) scale(0); opacity: 0; }
+    .light .icon-moon { transform: rotate(-90deg) scale(0); opacity: 0; }
+
+    /* --- SECTIONS --- */
+    section { padding: 80px 0; scroll-margin-top: 60px; }
+    .hero { padding: 120px 0 60px; position: relative; }
+    
+    /* SPOTLIGHT WRAPPER */
+    .spotlight-wrapper { position: relative; display: inline-block; width: 100%; }
+    .layer-human { position: relative; z-index: 1; color: var(--ink); }
+    
+    .layer-code {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
+      font-family: var(--font-mono); font-size: 0.6em; line-height: 1.8;
+      color: var(--accent-code); background-color: var(--bg);
+      opacity: 0; transition: opacity 0.2s ease; pointer-events: none;
+      display: flex; align-items: center;
+    }
+    
+    @media (hover: hover) and (pointer: fine) {
+      .layer-code {
+        mask-image: radial-gradient(circle 180px at var(--x, -500px) var(--y, -500px), black 0%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle 180px at var(--x, -500px) var(--y, -500px), black 0%, transparent 100%);
+      }
+      .spotlight-wrapper:hover .layer-code { opacity: 1; }
+    }
+
+    .layer-human h1 { font-size: clamp(2.2rem, 6vw, 4.5rem); }
+    .layer-code .code-block { white-space: pre-wrap; width: 100%; }
+
+    .eyebrow {
+      display: inline-block; margin-bottom: 16px; padding: 6px 12px; border-radius: 8px;
+      background: var(--surface); color: var(--accent); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--line);
+    }
+    .hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--ink-muted); max-width: 720px; margin-top: 24px; }
+
+    /* GRIDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 40px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; perspective: 1000px; }
+
+    @media (max-width: 600px) {
+      .project-grid, .feature-grid, .stats-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 100px; }
+      h1 { word-wrap: break-word; }
+      #about .container > div { grid-template-columns: 1fr !important; gap: 24px !important; }
+    }
+
+    /* CARDS & INTERACTION */
+    .stat-card, .card, .project-card, .contact-panel {
+      background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    }
+    .card:hover, .stat-card:hover, .contact-panel:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--line-strong);
+    }
+
+    .stat-card { padding: 20px; }
+    .stat-num { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--ink); }
+    .stat-lbl { font-size: 0.85rem; color: var(--ink-muted); margin-top: 4px; }
+    .card { padding: 24px; }
+    
+    .project-card {
+      display: flex; flex-direction: column; gap: 16px; padding: 16px;
+      cursor: pointer; border-radius: var(--radius-lg);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .project-card:hover .thumb { transform: scale(1.02); }
+    
+    .thumb {
+      width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: var(--surface);
+      border: 1px solid var(--line); overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .art-switch { background: radial-gradient(circle at 30% 30%, #ff7e5f 0%, transparent 40%), radial-gradient(circle at 70% 70%, #feb47b 0%, transparent 40%); opacity: 0.8; }
+    .art-ive { background: conic-gradient(from 45deg at 50% 50%, #f4f0eb 0deg, #e0e0e0 180deg, #f4f0eb 360deg); }
+    .art-droga { background: repeating-linear-gradient(45deg, var(--line) 0px, var(--line) 2px, transparent 2px, transparent 12px); }
+
+    .project-meta { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; gap: 8px; flex-wrap: wrap; }
+    .contact-panel { padding: 32px 24px; }
+
+    /* Helper for hidden content that must stay in DOM for SEO */
+    .fulltext-hidden {
+      display: none;
+    }
+
+    /* Modal */
+    dialog {
+      border: none; padding: 0; border-radius: var(--radius-lg); background: var(--paper); color: var(--ink);
+      width: min(700px, 90vw); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      overscroll-behavior: contain;
+    }
+    dialog::backdrop { background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); }
+    dialog[open] { animation: fade-in 0.3s ease-out; }
+    .modal-content { padding: 24px; max-height: 80vh; overflow-y: auto; }
+    .modal-close { position: absolute; top: 16px; right: 16px; padding: 8px; border-radius: 50%; background: var(--surface); z-index: 10; cursor: pointer; }
+    .modal-close:hover { background: var(--line); }
+    @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .prose { font-size: 1rem; color: var(--ink); }
+    .prose p { margin-bottom: 1.4em; }
+    .prose a { color: var(--accent); text-decoration: underline; }
+    
+    footer { border-top: 1px solid var(--line); padding: 40px 0; font-size: 0.85rem; color: var(--ink-muted); }
+  </style>
+<script defer data-domain="shushurikhin.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body class="light">
+  
+  <div class="ambient-glow"></div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Главная</a>
+        <a href="#about" class="nav-link">Обо мне</a>
+        <a href="#ai" class="nav-link">AI Lab</a>
+        <a href="#projects" class="nav-link">Проекты</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a href="#contact" class="btn btn-primary">Связаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="container">
+      <div class="eyebrow">Редактор • Журналист • Промпт‑инженер</div>
+      
+      <div class="spotlight-wrapper" id="heroSpotlight">
+        <div class="layer-human">
+          <h1>Тексты, которые понимают люди<br><span style="color: var(--ink-muted); font-style: italic;">и нейросети.</span></h1>
+        </div>
+        <div class="layer-code" aria-hidden="true">
+          <div class="code-block">
+&lt;system&gt;
+  role: "expert_editor",
+  mode: "clarity_enhanced",
+  constraints: ["no_hallucinations", "empathy_high"]
+&lt;/system&gt;
+
+&gt; generate_headline({
+   topic: "Human_AI_Synthesis",
+   style: "Journalistic_Integrity",
+   output: "JSON"
+});
+
+// Synthesizing connection...
+// Output: "Understanding achieved."</div>
+        </div>
+      </div>
+
+      <p class="hero-subtitle">Я — Вячеслав Шушурихин. Объединяю точность журналистики с мощью AI. Настраиваю процессы генерации контента без «галлюцинаций» и пишу материалы, которым доверяют.</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">100+</div>
+          <div class="stat-lbl">Публикаций на Habr, VC</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">20 лет</div>
+          <div class="stat-lbl">В медиа и редактуре</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">AI Ops</div>
+          <div class="stat-lbl">Промпт-инжиниринг</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start;">
+          <div>
+            <h2 style="margin-bottom: 16px;">Метод</h2>
+            <p class="text-muted">Традиционная редактура слишком медленная для 2025 года. Чистый AI — слишком хаотичный. Мой подход лежит посередине.</p>
+          </div>
+          <article class="card">
+            <h3 style="font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; margin-bottom: 20px;">«Журналистика научила меня фактам, AI дал скорость. Я формулирую структуру, нейросети создают базу, а редакторский опыт превращает это в продукт.»</h3>
+            <ul style="display: grid; gap: 12px; list-style: none; padding: 0;">
+              <li style="display:flex; gap:10px; align-items:center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Стратегия:</strong> Tone of voice, редполитика</span>
+              </li>
+              <li style="display:flex; gap:10px; align-items:center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>AI-пайплайн:</strong> Промпты, CoT, валидация</span>
+              </li>
+              <li style="display:flex; gap:10px; align-items:center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>Продакшн:</strong> Лонгриды, рассылки, медиа</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai">
+      <div class="container">
+        <h2 style="margin-bottom: 40px;">AI Инжиниринг</h2>
+        <div class="feature-grid">
+          <article class="card">
+            <div style="width:40px; height:40px; background:var(--surface); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h3>Design‑промпты</h3>
+            <p class="text-muted" style="margin-top:8px">Создание шаблонов: Роль → Задача → Ограничение → Формат. Превращение хаоса в предсказуемый результат.</p>
+          </article>
+          <article class="card">
+            <div style="width:40px; height:40px; background:var(--surface); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--accent);">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Anti‑hallucination</h3>
+            <p class="text-muted" style="margin-top:8px">Методики снижения бреда нейросетей. Чек-листы фактов, перекрестная проверка источников (RAG light).</p>
+          </article>
+          <article class="card">
+            <div style="width:40px; height:40px; background:var(--surface); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--accent);">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Контент‑конвейер</h3>
+            <p class="text-muted" style="margin-top:8px">Настройка редакции, где AI делает черновик за 5 минут, а человек тратит время на смыслы, а не набор текста.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 style="margin-bottom: 40px;">Избранное</h2>
+        <div class="project-grid">
+          
+          <article class="project-card tilt-card" 
+            data-title="No Battles, Only Bonds" 
+            data-tags="The New Yorker, Essay, EN"
+            data-link="https://docs.google.com/document/d/1z93vP9g46WbjeZr44ktfYimXElBXOeImXq5DhJMT0do/edit?usp=sharing">
+            <div class="thumb art-switch" role="img" aria-label="Абстрактная иллюстрация Nintendo Switch в мягких тонах"></div>
+            <div>
+              <h3>No Battles, Only Bonds</h3>
+              <p class="text-muted">Эссе для The New Yorker: Каким мог бы быть Nintendo Switch 2. Концепция ненасильственного гейминга.</p>
+            </div>
+            <div class="project-meta">
+              <span class="chip">Essay</span><span class="chip">EN</span>
+            </div>
+            <div class="fulltext-hidden" hidden>
+              <p>Это эссе исследует будущее консолей через призму эмпатии, а не графической мощности. Мы предлагаем взгляд на интерфейс как на место встречи, а не меню выбора оружия.</p>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card"
+            data-title="«Хорошее — несложное»" 
+            data-tags="VC.ru, Apple, Design"
+            data-link="https://docs.google.com/document/d/11olmsVyJpE4t-d1GNgYf1V_w882-U95MDqVx43s1oMA/edit?usp=sharing">
+            <div class="thumb art-ive" role="img" aria-label="Графическая абстракция в стиле Джони Айва"></div>
+            <div>
+              <h3>Колонка Джони Айва</h3>
+              <p class="text-muted">Переосмысление философии дизайна Apple для аудитории VC.ru. Почему простота — это высшая сложность.</p>
+            </div>
+            <div class="project-meta">
+              <span class="chip">Design</span><span class="chip">RU</span>
+            </div>
+            <div class="fulltext-hidden" hidden>
+              <p>Анализ карьеры Джони Айва после Apple. Материал фокусируется на его новом проекте LoveFrom и том, как дизайн возвращается к физическим корням.</p>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card"
+            data-title="18 and Broke — Do This" 
+            data-tags="Masterclass, Career, Guide"
+            data-link="https://docs.google.com/document/d/1MUk3gWzizgaKSeUbYTZ_QPMT4Ejej3YZadFwXzek-WE/edit?usp=sharing">
+            <div class="thumb art-droga" role="img" aria-label="Паттерн в виде строгих линий"></div>
+            <div>
+              <h3>Советы Дэвида Дроги</h3>
+              <p class="text-muted">Практическое руководство для Masterclass.com. Как начать карьеру в креативе без денег и связей.</p>
+            </div>
+            <div class="project-meta">
+              <span class="chip">Career</span><span class="chip">EN</span>
+            </div>
+            <div class="fulltext-hidden" hidden>
+              <p>Манифест действий. Никакой романтики, только алгоритм: как стать полезным, как собрать портфолио из ничего и как продать свою дерзость.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-bottom: 100px;">
+      <div class="container">
+        <div class="contact-panel">
+          <div style="max-width: 600px;">
+            <h2>Давайте работать</h2>
+            <p class="text-muted" style="font-size: 1.05rem; margin-top: 16px;">
+              Интересны сложные темы: AI, FinTech, EdTech, кибербезопасность.
+              <br>Пишу для людей, оптимизирую для бизнеса.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">
+              <a href="mailto:hello@shushurikhin.ru" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                hello@shushurikhin.ru
+              </a>
+              <a href="https://t.me/shushurikhin" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <span>© 2025 Вячеслав Шушурихин</span>
+        <a href="#hero" style="opacity:0.6; font-size:0.85rem">Наверх ↑</a>
+      </div>
+      <div style="margin-top: 12px; font-size: 0.75rem; opacity: 0.4;">
+        Сайт сверстан полностью с помощью AI
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="project-modal">
+    <button class="modal-close" onclick="closeModal()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-content">
+      <span id="m-tags" class="text-muted" style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;"></span>
+      <h2 id="m-title" style="margin: 8px 0 16px;"></h2>
+      <div id="m-body" class="prose"></div>
+      <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line);">
+        <a id="m-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Читать полностью →</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // --- Theme Handling ---
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.className = savedTheme;
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.className = 'dark';
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      body.className = isDark ? 'light' : 'dark';
+      localStorage.setItem('theme', body.className);
+    });
+
+    // --- Active Link Highlighting ---
+    const sections = document.querySelectorAll("section, header");
+    const navLi = document.querySelectorAll(".nav-link");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 150) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.getAttribute("href").includes(current)) {
+          li.classList.add("active");
+        }
+      });
+    });
+
+    // --- 1. Global Ambient Glow (Background Follower) ---
+    document.addEventListener('mousemove', (e) => {
+      body.style.setProperty('--mouse-x', `${e.clientX}px`);
+      body.style.setProperty('--mouse-y', `${e.clientY}px`);
+    });
+
+    // --- 2. Hero Text Spotlight (Desktop Only) ---
+    const spotlight = document.getElementById('heroSpotlight');
+    if (spotlight && window.matchMedia('(hover: hover)').matches) {
+      spotlight.addEventListener('mousemove', (e) => {
+        const rect = spotlight.getBoundingClientRect();
+        spotlight.style.setProperty('--x', `${e.clientX - rect.left}px`);
+        spotlight.style.setProperty('--y', `${e.clientY - rect.top}px`);
+      });
+    }
+
+    // --- 3. 3D Tilt Effect for Cards ---
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    if (window.matchMedia('(hover: hover)').matches) {
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Max tilt degrees
+          const rotateX = ((y - centerY) / centerY) * -4; 
+          const rotateY = ((x - centerX) / centerX) * 4;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+      });
+    }
+
+    // --- Modal Logic (Updated for SEO) ---
+    const modal = document.getElementById('project-modal');
+    const mTitle = document.getElementById('m-title');
+    const mTags = document.getElementById('m-tags');
+    const mBody = document.getElementById('m-body');
+    const mLink = document.getElementById('m-link');
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        mTitle.innerText = card.dataset.title;
+        mTags.textContent = card.dataset.tags;
+        mLink.href = card.dataset.link;
+        
+        // UPDATED: Select hidden div instead of template
+        const contentDiv = card.querySelector('.fulltext-hidden');
+        if (contentDiv) {
+            mBody.innerHTML = contentDiv.innerHTML;
+        } else {
+            mBody.innerHTML = "";
+        }
+        
+        modal.showModal();
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeModal() { modal.close(); document.body.style.overflow = ''; }
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  </script>
+</body>
+</html>
