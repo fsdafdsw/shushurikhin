@@ -7,27 +7,33 @@
   <title>Вячеслав Шушурихин — Редактор и Промпт‑инженер</title>
   <meta name="description" content="Портфолио редактора и журналиста Вячеслава Шушурихина. Промпт‑инжиниринг, разработка AI-пайплайнов, тексты о технологиях (FinTech, EdTech) и бизнесе." />
   <meta name="keywords" content="редактор, промпт-инженер, AI, копирайтинг, журналист, тексты, нейросети, Вячеслав Шушурихин" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Вячеслав Шушурихин" />
+  <meta name="format-detection" content="telephone=no, email=no, address=no" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light dark" />
   
   <link rel="canonical" href="https://shushurikhin.tiiny.site/" />
 
+  <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Вячеслав Шушурихин — Редактор и Промпт-инженер">
   <meta property="og:description" content="Объединяю точность журналистики с мощью AI. Настраиваю процессы генерации контента.">
   <meta property="og:url" content="https://shushurikhin.tiiny.site/">
   <meta property="og:site_name" content="Портфолио Вячеслава Шушурихина">
-  <meta property="og:image" content="https://shushurikhin.tiiny.site/og-image.jpg"> 
+  <meta property="og:image" content="https://shushurikhin.tiiny.site/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Вячеслав Шушурихин — Редактор и Промпт-инженер">
+  <meta name="twitter:description" content="Объединяю точность журналистики с мощью AI. Настраиваю процессы генерации контента.">
+  <meta name="twitter:image" content="https://shushurikhin.tiiny.site/og-image.jpg">
+
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✍️</text></svg>">
 
   <meta name="theme-color" content="#fdf0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d0e11" media="(prefers-color-scheme: dark)">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -59,9 +65,9 @@
       --accent-glow: 11, 61, 145;
       --radius-md: 16px;
       --radius-lg: 24px;
-      --font-sans: 'Inter', system-ui, sans-serif;
-      --font-serif: 'Playfair Display', serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, Arial, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+      --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
       --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(50, 50, 93, 0.04);
       --shadow-hover: 0 10px 25px -5px rgba(50, 50, 93, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
       --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.07'/%3E%3C/svg%3E");
@@ -243,17 +249,108 @@
       transform-style: preserve-3d;
       will-change: transform;
     }
-    .project-card:hover .thumb { transform: scale(1.02); }
-    
+        .project-card:hover .thumb { transform: scale(1.015); border-color: var(--line-strong); }
+
     .thumb {
+      position: relative;
       width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: var(--surface);
-      border: 1px solid var(--line); overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid var(--line); overflow: hidden; isolation: isolate;
+      --mx: 50%;
+      --my: 50%;
+      --dx: 0px;
+      --dy: 0px;
+      background-image: var(--art-bg, linear-gradient(135deg, var(--surface), var(--paper)));
+      background-size: 120% 120%, 120% 120%, 100% 100%;
+      background-position: 0% 0%, 100% 100%, 50% 50%;
+      transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease;
+      will-change: transform, background-position;
+      animation: thumb-drift 14s ease-in-out infinite;
     }
-    
-    .art-switch { background: radial-gradient(circle at 30% 30%, #ff7e5f 0%, transparent 40%), radial-gradient(circle at 70% 70%, #feb47b 0%, transparent 40%); opacity: 0.8; }
-    .art-ive { background: conic-gradient(from 45deg at 50% 50%, #f4f0eb 0deg, #e0e0e0 180deg, #f4f0eb 360deg); }
-    .art-droga { background: repeating-linear-gradient(45deg, var(--line) 0px, var(--line) 2px, transparent 2px, transparent 12px); }
+
+    .thumb::before,
+    .thumb::after {
+      content: "";
+      position: absolute;
+      inset: -10%;
+      pointer-events: none;
+      border-radius: 14px;
+    }
+
+    .thumb::before {
+      background:
+        radial-gradient(48% 46% at var(--mx) var(--my), var(--glow-a, rgba(120,140,255,0.45)) 0%, transparent 72%),
+        radial-gradient(52% 56% at calc(100% - var(--mx)) calc(100% - var(--my)), var(--glow-b, rgba(255,170,140,0.35)) 0%, transparent 78%),
+        conic-gradient(from 200deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.08) 90deg, transparent 200deg, rgba(255,255,255,0.08) 300deg, transparent 360deg);
+      filter: blur(8px) saturate(110%);
+      mix-blend-mode: screen;
+      opacity: 0.95;
+      transform: translate3d(calc(var(--dx) * 0.06), calc(var(--dy) * 0.06), 0);
+      transition: opacity 0.35s ease;
+    }
+
+    .thumb::after {
+      background:
+        radial-gradient(95% 80% at calc(var(--mx) + (var(--dx) * 0.08)) calc(var(--my) + (var(--dy) * 0.08)), rgba(255,255,255,0.18), transparent 52%),
+        linear-gradient(115deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.03) 34%, rgba(255,255,255,0.12) 56%, rgba(255,255,255,0.02) 85%);
+      mix-blend-mode: soft-light;
+      transform: translate3d(calc(var(--dx) * 0.03), calc(var(--dy) * 0.03), 0);
+      opacity: 0.85;
+      transition: opacity 0.35s ease;
+    }
+
+    .project-card:hover .thumb {
+      transform: scale(1.015);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+    }
+
+    .dark .project-card:hover .thumb {
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+    }
+
+    .project-card:hover .thumb::before,
+    .project-card:hover .thumb::after {
+      opacity: 1;
+    }
+
+    .art-switch {
+      --art-bg:
+        radial-gradient(120% 95% at 16% 18%, rgba(255,126,95,0.78) 0%, transparent 58%),
+        radial-gradient(100% 86% at 84% 78%, rgba(254,180,123,0.64) 0%, transparent 62%),
+        linear-gradient(145deg, rgba(255,255,255,0.58) 0%, rgba(255,220,196,0.28) 38%, rgba(245,156,118,0.16) 100%);
+      --glow-a: rgba(255,126,95,0.62);
+      --glow-b: rgba(255,210,155,0.52);
+    }
+
+    .art-ive {
+      --art-bg:
+        radial-gradient(130% 120% at 12% 22%, rgba(208,220,255,0.54) 0%, transparent 64%),
+        radial-gradient(100% 90% at 88% 82%, rgba(206,211,224,0.44) 0%, transparent 68%),
+        linear-gradient(145deg, rgba(244,240,235,0.92) 0%, rgba(223,225,232,0.52) 52%, rgba(239,241,246,0.76) 100%);
+      --glow-a: rgba(191,206,255,0.52);
+      --glow-b: rgba(245,246,250,0.44);
+    }
+
+    .art-droga {
+      --art-bg:
+        radial-gradient(115% 95% at 14% 20%, rgba(105,133,246,0.44) 0%, transparent 62%),
+        radial-gradient(110% 90% at 86% 82%, rgba(86,214,192,0.36) 0%, transparent 66%),
+        repeating-linear-gradient(35deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 2px, transparent 2px, transparent 12px),
+        linear-gradient(145deg, rgba(18,22,35,0.88) 0%, rgba(25,33,52,0.86) 52%, rgba(11,16,30,0.92) 100%);
+      --glow-a: rgba(121,151,255,0.52);
+      --glow-b: rgba(91,227,212,0.44);
+    }
+
+    @keyframes thumb-drift {
+      0% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+      }
+      50% {
+        background-position: 12% 8%, 88% 92%, 46% 56%;
+      }
+      100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+      }
+    }
 
     .project-meta { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; gap: 8px; flex-wrap: wrap; }
     .contact-panel { padding: 32px 24px; }
@@ -280,9 +377,23 @@
     .prose p { margin-bottom: 1.4em; }
     .prose a { color: var(--accent); text-decoration: underline; }
     
+
+    /* --- PERFORMANCE ENHANCEMENTS --- */
+    section { content-visibility: auto; contain-intrinsic-size: 1px 700px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .thumb, .thumb::before, .thumb::after { animation: none !important; }
+      .project-card, .thumb { transform: none !important; }
+    }
+
     footer { border-top: 1px solid var(--line); padding: 40px 0; font-size: 0.85rem; color: var(--ink-muted); }
   </style>
-<script defer data-domain="shushurikhin.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+</head>
 <body class="light">
   
   <div class="ambient-glow"></div>
@@ -336,11 +447,11 @@
       
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-num">100+</div>
+          <div class="stat-num">50+</div>
           <div class="stat-lbl">Публикаций на Habr, VC</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">20 лет</div>
+          <div class="stat-num">10 лет</div>
           <div class="stat-lbl">В медиа и редактуре</div>
         </div>
         <div class="stat-card">
@@ -357,10 +468,10 @@
         <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: start;">
           <div>
             <h2 style="margin-bottom: 16px;">Метод</h2>
-            <p class="text-muted">Традиционная редактура слишком медленная для 2025 года. Чистый AI — слишком хаотичный. Мой подход лежит посередине.</p>
+            <p class="text-muted">Традиционная редактура слишком медленная для 2026 года. Чистый AI — слишком хаотичный. Мой подход лежит посередине.</p>
           </div>
           <article class="card">
-            <h3 style="font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; margin-bottom: 20px;">«Журналистика научила меня фактам, AI дал скорость. Я формулирую структуру, нейросети создают базу, а редакторский опыт превращает это в продукт.»</h3>
+            <h3 style="font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; margin-bottom: 20px;">Журналистика научила меня фактам, AI дал скорость. Я формулирую структуру, нейросети создают базу, а редакторский опыт превращает это в продукт</h3>
             <ul style="display: grid; gap: 12px; list-style: none; padding: 0;">
               <li style="display:flex; gap:10px; align-items:center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -497,7 +608,7 @@
   <footer>
     <div class="container">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-        <span>© 2025 Вячеслав Шушурихин</span>
+        <span>© 2026 Вячеслав Шушурихин</span>
         <a href="#hero" style="opacity:0.6; font-size:0.85rem">Наверх ↑</a>
       </div>
       <div style="margin-top: 12px; font-size: 0.75rem; opacity: 0.4;">
@@ -520,110 +631,266 @@
     </div>
   </dialog>
 
+  
   <script>
     // --- Theme Handling ---
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      body.className = savedTheme;
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      body.className = 'dark';
+
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        body.className = savedTheme;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.className = 'dark';
+      }
+    } catch (e) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) body.className = 'dark';
     }
-    themeToggle.addEventListener('click', () => {
-      const isDark = body.classList.contains('dark');
-      body.className = isDark ? 'light' : 'dark';
-      localStorage.setItem('theme', body.className);
-    });
 
-    // --- Active Link Highlighting ---
-    const sections = document.querySelectorAll("section, header");
-    const navLi = document.querySelectorAll(".nav-link");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 150) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLi.forEach((li) => {
-        li.classList.remove("active");
-        if (li.getAttribute("href").includes(current)) {
-          li.classList.add("active");
-        }
-      });
-    });
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.contains('dark');
+        body.className = isDark ? 'light' : 'dark';
+        try { localStorage.setItem('theme', body.className); } catch (e) {}
+      }, { passive: true });
+    }
 
-    // --- 1. Global Ambient Glow (Background Follower) ---
-    document.addEventListener('mousemove', (e) => {
-      body.style.setProperty('--mouse-x', `${e.clientX}px`);
-      body.style.setProperty('--mouse-y', `${e.clientY}px`);
-    });
+    // --- Active Link Highlighting (rAF-throttled) ---
+    const sections = Array.from(document.querySelectorAll('section[id], header[id]'));
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    let scrollTicking = false;
 
-    // --- 2. Hero Text Spotlight (Desktop Only) ---
+    function updateActiveLink() {
+      scrollTicking = false;
+      let current = '';
+      const pos = window.scrollY + 150;
+
+      for (let i = 0; i < sections.length; i++) {
+        if (pos >= sections[i].offsetTop) current = sections[i].id;
+      }
+
+      for (let i = 0; i < navLinks.length; i++) {
+        const link = navLinks[i];
+        const active = current && link.getAttribute('href').includes(current);
+        link.classList.toggle('active', !!active);
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(updateActiveLink);
+      }
+    }, { passive: true });
+    updateActiveLink();
+
+    // --- 1. Global Ambient Glow (soft + rAF-throttled) ---
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let glowRaf = 0;
+      let targetX = window.innerWidth * 0.5;
+      let targetY = window.innerHeight * 0.35;
+      let currentX = targetX;
+      let currentY = targetY;
+
+      function renderGlow() {
+        glowRaf = 0;
+        currentX += (targetX - currentX) * 0.14;
+        currentY += (targetY - currentY) * 0.14;
+
+        body.style.setProperty('--mouse-x', `${currentX.toFixed(2)}px`);
+        body.style.setProperty('--mouse-y', `${currentY.toFixed(2)}px`);
+
+        const stillMoving = Math.abs(targetX - currentX) > 0.2 || Math.abs(targetY - currentY) > 0.2;
+        if (stillMoving) glowRaf = requestAnimationFrame(renderGlow);
+      }
+
+      document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        if (!glowRaf) glowRaf = requestAnimationFrame(renderGlow);
+      }, { passive: true });
+
+      if (!glowRaf) glowRaf = requestAnimationFrame(renderGlow);
+    }
+
+    // --- 2. Hero Text Spotlight (Desktop Only, rAF-throttled) ---
     const spotlight = document.getElementById('heroSpotlight');
     if (spotlight && window.matchMedia('(hover: hover)').matches) {
+      let spotRaf = 0;
+      let sx = 0, sy = 0;
+      let rect = null;
+
+      spotlight.addEventListener('mouseenter', () => {
+        rect = spotlight.getBoundingClientRect();
+      }, { passive: true });
+
       spotlight.addEventListener('mousemove', (e) => {
-        const rect = spotlight.getBoundingClientRect();
-        spotlight.style.setProperty('--x', `${e.clientX - rect.left}px`);
-        spotlight.style.setProperty('--y', `${e.clientY - rect.top}px`);
-      });
+        if (!rect) rect = spotlight.getBoundingClientRect();
+        sx = e.clientX - rect.left;
+        sy = e.clientY - rect.top;
+
+        if (spotRaf) return;
+        spotRaf = requestAnimationFrame(() => {
+          spotlight.style.setProperty('--x', `${sx}px`);
+          spotlight.style.setProperty('--y', `${sy}px`);
+          spotRaf = 0;
+        });
+      }, { passive: true });
+
+      window.addEventListener('resize', () => { rect = null; }, { passive: true });
     }
 
-    // --- 3. 3D Tilt Effect for Cards ---
-    const tiltCards = document.querySelectorAll('.tilt-card');
-    
-    if (window.matchMedia('(hover: hover)').matches) {
-      tiltCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          // Max tilt degrees
-          const rotateX = ((y - centerY) / centerY) * -4; 
-          const rotateY = ((x - centerX) / centerX) * 4;
+    // --- 3. Smooth Interactive Abstractions for Featured Covers ---
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHoverFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const interactiveCards = document.querySelectorAll('.project-card.tilt-card');
 
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
+    if (!prefersReducedMotion && canHoverFine && interactiveCards.length) {
+      interactiveCards.forEach((card) => {
+        const thumb = card.querySelector('.thumb');
+        if (!thumb) return;
+
+        const state = {
+          tx: 0.5, ty: 0.5,
+          cx: 0.5, cy: 0.5,
+          tdx: 0, tdy: 0,
+          cdx: 0, cdy: 0,
+          rect: null,
+          isHover: false,
+          raf: 0
+        };
+
+        const lerp = (a, b, t) => a + (b - a) * t;
+
+        function setVars() {
+          thumb.style.setProperty('--mx', `${(state.cx * 100).toFixed(2)}%`);
+          thumb.style.setProperty('--my', `${(state.cy * 100).toFixed(2)}%`);
+          thumb.style.setProperty('--dx', `${state.cdx.toFixed(2)}px`);
+          thumb.style.setProperty('--dy', `${state.cdy.toFixed(2)}px`);
+        }
+
+        function animate() {
+          state.cx = lerp(state.cx, state.tx, 0.09);
+          state.cy = lerp(state.cy, state.ty, 0.09);
+          state.cdx = lerp(state.cdx, state.tdx, 0.08);
+          state.cdy = lerp(state.cdy, state.tdy, 0.08);
+
+          setVars();
+
+          const rotateY = (state.cx - 0.5) * 2.2;
+          const rotateX = (0.5 - state.cy) * 1.7;
+          const lift = state.isHover ? -2 : 0;
+          card.style.transform = `translateY(${lift}px) perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+          const closeEnough =
+            Math.abs(state.tx - state.cx) < 0.002 &&
+            Math.abs(state.ty - state.cy) < 0.002 &&
+            Math.abs(state.tdx - state.cdx) < 0.08 &&
+            Math.abs(state.tdy - state.cdy) < 0.08;
+
+          if (closeEnough && !state.isHover) {
+            state.raf = 0;
+            card.style.transform = '';
+            return;
+          }
+
+          state.raf = requestAnimationFrame(animate);
+        }
+
+        function kick() {
+          if (!state.raf) state.raf = requestAnimationFrame(animate);
+        }
+
+        function updateRect() {
+          state.rect = card.getBoundingClientRect();
+        }
+
+        card.addEventListener('mouseenter', () => {
+          state.isHover = true;
+          updateRect();
+          kick();
+        }, { passive: true });
+
+        card.addEventListener('mousemove', (e) => {
+          if (!state.rect) updateRect();
+
+          const x = (e.clientX - state.rect.left) / state.rect.width;
+          const y = (e.clientY - state.rect.top) / state.rect.height;
+
+          state.tx = Math.max(0, Math.min(1, x));
+          state.ty = Math.max(0, Math.min(1, y));
+
+          state.tdx = (state.tx - 0.5) * 26;
+          state.tdy = (state.ty - 0.5) * 18;
+
+          kick();
+        }, { passive: true });
 
         card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+          state.isHover = false;
+          state.tx = 0.5;
+          state.ty = 0.5;
+          state.tdx = 0;
+          state.tdy = 0;
+          kick();
+        }, { passive: true });
+
+        card.addEventListener('focusin', () => {
+          state.isHover = true;
+          kick();
         });
+
+        card.addEventListener('focusout', () => {
+          state.isHover = false;
+          state.tx = 0.5;
+          state.ty = 0.5;
+          state.tdx = 0;
+          state.tdy = 0;
+          kick();
+        });
+
+        setVars();
       });
+
+      window.addEventListener('resize', () => {
+        interactiveCards.forEach((card) => {
+          if (card.style.transform) card.style.transform = card.style.transform;
+        });
+      }, { passive: true });
     }
 
-    // --- Modal Logic (Updated for SEO) ---
+    // --- Modal Logic ---
     const modal = document.getElementById('project-modal');
     const mTitle = document.getElementById('m-title');
     const mTags = document.getElementById('m-tags');
     const mBody = document.getElementById('m-body');
     const mLink = document.getElementById('m-link');
 
-    document.querySelectorAll('.project-card').forEach(card => {
+    document.querySelectorAll('.project-card').forEach((card) => {
       card.addEventListener('click', () => {
         mTitle.innerText = card.dataset.title;
         mTags.textContent = card.dataset.tags;
         mLink.href = card.dataset.link;
-        
-        // UPDATED: Select hidden div instead of template
+
         const contentDiv = card.querySelector('.fulltext-hidden');
-        if (contentDiv) {
-            mBody.innerHTML = contentDiv.innerHTML;
-        } else {
-            mBody.innerHTML = "";
-        }
-        
+        mBody.innerHTML = contentDiv ? contentDiv.innerHTML : '';
+
         modal.showModal();
         document.body.style.overflow = 'hidden';
       });
     });
-    function closeModal() { modal.close(); document.body.style.overflow = ''; }
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    function closeModal() {
+      modal.close();
+      document.body.style.overflow = '';
+    }
+    window.closeModal = closeModal;
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
   </script>
+
 </body>
 </html>
