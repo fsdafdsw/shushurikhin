@@ -117,11 +117,16 @@
           "mainEntity": {
             "@id": "https://shushurikhin.vercel.app/#person"
           },
-          "hasPart": {
-            "@id": "https://shushurikhin.vercel.app/#selected-work"
-          },
+          "hasPart": [
+            {
+              "@id": "https://shushurikhin.vercel.app/#selected-work"
+            },
+            {
+              "@id": "https://shushurikhin.vercel.app/#service-pages"
+            }
+          ],
           "inLanguage": "ru-RU",
-          "dateModified": "2026-03-11T17:03:06+03:00"
+          "dateModified": "2026-03-11T17:13:25+03:00"
         },
         {
           "@type": "ItemList",
@@ -160,6 +165,59 @@
                 "url": "https://docs.google.com/document/d/1MUk3gWzizgaKSeUbYTZ_QPMT4Ejej3YZadFwXzek-WE/edit?usp=sharing",
                 "genre": "Guide",
                 "inLanguage": "en"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://shushurikhin.vercel.app/#service-pages",
+          "name": "Pages by task",
+          "numberOfItems": 5,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "name": "Редактор для IT и сложных тем",
+                "url": "https://shushurikhin.vercel.app/redaktor-dlya-it/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "name": "Ghostwriter для founders и экспертов",
+                "url": "https://shushurikhin.vercel.app/ghostwriter-dlya-founderov/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "WebPage",
+                "name": "B2B-тексты и статьи для бизнеса",
+                "url": "https://shushurikhin.vercel.app/b2b-teksty/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "WebPage",
+                "name": "Редактура longreads и колонок",
+                "url": "https://shushurikhin.vercel.app/redaktura-longridov/"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "WebPage",
+                "name": "AI-контент с редакторской проверкой",
+                "url": "https://shushurikhin.vercel.app/ai-kontent-s-redakturoy/"
               }
             }
           ]
@@ -729,6 +787,12 @@
       gap: 16px;
     }
 
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
     .faq-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -754,6 +818,44 @@
         transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
         border-color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .route-card {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(23, 21, 20, 0.07);
+      border-bottom-color: rgba(23, 21, 20, 0.07);
+      background: linear-gradient(180deg, rgba(250, 248, 244, 0.92), rgba(245, 241, 234, 0.66));
+      box-shadow: var(--card-shadow);
+      transition:
+        transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        color 180ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .route-card strong {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .route-card p {
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .route-meta {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--label);
     }
 
     .archive-card h3 {
@@ -881,6 +983,7 @@
       .work-row:hover,
       .archive-card:hover,
       .faq-item:hover,
+      .route-card:hover,
       .service-rows li:hover,
       .principles li:hover,
       .proof-strip:hover,
@@ -903,6 +1006,7 @@
       .block,
       .proof-strip,
       .archive-grid,
+      .routes-grid,
       .faq-grid,
       .practice-grid,
       .contact-panel,
@@ -1017,6 +1121,7 @@
             <a href="#work">Работы</a>
             <a href="#archive">Архив</a>
             <a href="#practice">Форматы</a>
+            <a href="#routes">По задачам</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Связь</a>
           </nav>
@@ -1289,8 +1394,46 @@
           </div>
         </section>
 
+        <section class="block panel" id="routes" data-panel>
+          <div class="block-label">05 / Pages</div>
+          <div class="block-body">
+            <div class="block-head">
+              <h2>Отдельные страницы под конкретные задачи</h2>
+              <p>Чтобы сайт собирал не только брендовый, но и прикладной поисковый спрос, я вынес основные направления в отдельные страницы. Каждая из них заточена под свой запрос и свой рабочий контекст.</p>
+            </div>
+
+            <div class="routes-grid">
+              <a class="route-card" href="/redaktor-dlya-it/">
+                <span class="route-meta">IT / AI / B2B</span>
+                <strong>Редактор для IT и сложных тем</strong>
+                <p>Для технологических статей, объясняющих материалов и B2B-тем, где важны ясность и точность.</p>
+              </a>
+              <a class="route-card" href="/ghostwriter-dlya-founderov/">
+                <span class="route-meta">Founder voice</span>
+                <strong>Ghostwriter для founders и экспертов</strong>
+                <p>Для колонок, byline-материалов и текстов от первого лица, где важны голос и позиция.</p>
+              </a>
+              <a class="route-card" href="/b2b-teksty/">
+                <span class="route-meta">Business / SaaS</span>
+                <strong>B2B-тексты и статьи для бизнеса</strong>
+                <p>Для продуктовых материалов, экспертных статей, рассылок и делового контента.</p>
+              </a>
+              <a class="route-card" href="/redaktura-longridov/">
+                <span class="route-meta">Longreads / Columns</span>
+                <strong>Редактура longreads и колонок</strong>
+                <p>Для длинной формы, колонок и narrative shaping, где текст должен держать дистанцию.</p>
+              </a>
+              <a class="route-card" href="/ai-kontent-s-redakturoy/">
+                <span class="route-meta">Workflow / QA</span>
+                <strong>AI-контент с редакторской проверкой</strong>
+                <p>Для команд, которым нужен AI-процесс с guardrails, quality control и взрослым выпуском.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section class="block panel" id="faq" data-panel>
-          <div class="block-label">05 / FAQ</div>
+          <div class="block-label">06 / FAQ</div>
           <div class="block-body">
             <div class="block-head">
               <h2>Частые вопросы о редактуре, ghostwriting и B2B-текстах</h2>
@@ -1319,7 +1462,7 @@
         </section>
 
         <section class="block panel" id="contact" data-panel>
-          <div class="block-label">06 / Contact</div>
+          <div class="block-label">07 / Contact</div>
           <div class="block-body">
             <div class="contact-panel">
               <div class="contact-copy">
