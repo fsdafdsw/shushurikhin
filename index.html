@@ -121,7 +121,7 @@
             "@id": "https://shushurikhin.vercel.app/#selected-work"
           },
           "inLanguage": "ru-RU",
-          "dateModified": "2026-03-11T16:46:01+03:00"
+          "dateModified": "2026-03-11T17:03:06+03:00"
         },
         {
           "@type": "ItemList",
@@ -729,6 +729,12 @@
       gap: 16px;
     }
 
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
     .archive-card {
       display: grid;
       gap: 14px;
@@ -736,8 +742,36 @@
       align-content: start;
     }
 
+    .faq-item {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(250, 248, 244, 0.92), rgba(245, 241, 234, 0.66));
+      border: 1px solid rgba(23, 21, 20, 0.07);
+      border-radius: 24px;
+      box-shadow: var(--card-shadow);
+      transition:
+        transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
     .archive-card h3 {
       font-size: 1.34rem;
+    }
+
+    .faq-item h3 {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      text-wrap: pretty;
     }
 
     .archive-list li {
@@ -846,6 +880,7 @@
       .ledger-row:hover,
       .work-row:hover,
       .archive-card:hover,
+      .faq-item:hover,
       .service-rows li:hover,
       .principles li:hover,
       .proof-strip:hover,
@@ -868,6 +903,7 @@
       .block,
       .proof-strip,
       .archive-grid,
+      .faq-grid,
       .practice-grid,
       .contact-panel,
       .signals {
@@ -981,21 +1017,22 @@
             <a href="#work">Работы</a>
             <a href="#archive">Архив</a>
             <a href="#practice">Форматы</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Связь</a>
           </nav>
         </div>
 
         <div class="masthead-main">
           <div>
-            <div class="eyebrow">Редактор, ghostwriter, narrative editor</div>
+            <div class="eyebrow">Редактор, ghostwriter, журналист</div>
             <h1>Вячеслав Шушурихин</h1>
-            <p class="role">Собираю тексты с ясной мыслью, точным тоном и аккуратной редактурой.</p>
+            <p class="role">Редактор, ghostwriter и журналист для founders, медиа, IT- и B2B-команд.</p>
           </div>
 
           <div class="lead">
-            <p>Пишу и редактирую тексты с ясной структурой, точным тоном и живым голосом.</p>
-            <p>Работаю с founders, экспертами, медиа и продуктами, когда от текста ждут доверия, ясности и внятной позиции.</p>
-            <p class="lead-note">Лучше всего чувствую себя в задачах, где текст читают внимательно и надолго запоминают.</p>
+            <p>Пишу и редактирую колонки, longreads, B2B-тексты, статьи для IT и AI-команд, письма и тексты от первого лица.</p>
+            <p>Работаю с founders, экспертами, медиа и продуктами, когда нужен редактор или ghostwriter для сложной темы, сильной позиции и взрослого тона.</p>
+            <p class="lead-note">Сильнее всего полезен там, где текст должен объяснять сложное, собирать доверие и выдерживать внимательное чтение.</p>
             <div class="lead-links">
               <a href="mailto:hello@shushurikhin.ru">hello@shushurikhin.ru</a>
               <span>/</span>
@@ -1007,11 +1044,11 @@
         <ul class="signals" aria-label="Краткое описание практики">
           <li>
             <span class="signal-term">Форматы</span>
-            <strong>Колонки, эссе, longreads, landing narrative, founder voice</strong>
+            <strong>Редактура, ghostwriting, колонки, longreads, B2B-тексты, рассылки</strong>
           </li>
           <li>
             <span class="signal-term">Темы</span>
-            <strong>FinTech, EdTech, AI, cybersecurity, product, culture</strong>
+            <strong>IT, AI, FinTech, EdTech, cybersecurity, product, culture</strong>
           </li>
           <li>
             <span class="signal-term">Языки</span>
@@ -1019,12 +1056,12 @@
           </li>
           <li>
             <span class="signal-term">Дополнительно</span>
-            <strong>Контент-процессы с AI и редакторской проверкой для команд и авторов</strong>
+            <strong>AI-контент-процессы и редакторский контроль качества для команд и авторов</strong>
           </li>
         </ul>
 
         <div class="proof-strip" aria-label="Публикации и бренды">
-          <div class="proof-label">Публикации и бренды</div>
+          <div class="proof-label">Публикации, клиенты, темы</div>
           <div class="proof-groups">
             <div class="proof-group">
               <strong>Публиковался</strong>
@@ -1053,18 +1090,18 @@
           <div class="block-label">01 / Scope</div>
           <div class="block-body">
             <div class="block-head">
-              <h2>Где я особенно полезен</h2>
-              <p>Работаю с точечными редакторскими задачами, авторскими материалами и контент-процессами с высокой ставкой. Там, где текст читают внимательно и по нему судят о человеке, продукте или компании.</p>
+              <h2>Когда нужен редактор, ghostwriter или журналист</h2>
+              <p>Работаю с редактурой, ghostwriting, longreads, B2B-текстами и статьями о сложных темах. Там, где по тексту судят о человеке, компании, продукте или экспертизе.</p>
             </div>
 
             <dl class="ledger">
               <div class="ledger-row">
                 <dt>Лучший fit</dt>
-                <dd>Founder-led компании, независимые эксперты, медиа, агентства и продуктовые команды, которым нужен сильный голос и взрослая подача.</dd>
+                <dd>Founder-led компании, независимые эксперты, медиа, агентства, IT- и B2B-команды, которым нужен сильный голос и взрослая подача.</dd>
               </div>
               <div class="ledger-row">
                 <dt>Когда я нужен</dt>
-                <dd>Когда нужно объяснить сложную тему, собрать колонку, написать текст от первого лица или довести материал до публикации.</dd>
+                <dd>Когда нужен редактор для колонки, ghostwriter для текста от первого лица, журналист для сложной темы или автор B2B-материала под публикацию.</dd>
               </div>
               <div class="ledger-row">
                 <dt>Что важно</dt>
@@ -1082,8 +1119,8 @@
           <div class="block-label">02 / Selected Work</div>
           <div class="block-body">
             <div class="block-head">
-              <h2>Три текста, по которым проще всего понять диапазон</h2>
-              <p>Здесь три текста с разной задачей, длиной и тоном. По ним проще всего понять мой диапазон и способ работы.</p>
+              <h2>Портфолио редактора и ghostwriter'а: три текста для быстрого понимания диапазона</h2>
+              <p>Здесь три текста с разной задачей, длиной и тоном. По ним проще всего понять, как я работаю с редактурой, авторским голосом и длинной формой.</p>
             </div>
 
             <ol class="work-list">
@@ -1133,8 +1170,8 @@
           <div class="block-label">03 / Archive</div>
           <div class="block-body">
             <div class="block-head">
-              <h2>Из полного портфолио можно добавить еще несколько важных сигналов</h2>
-              <p>В основном Notion-архиве много опубликованных материалов, рассылок и учебных форматов. Здесь оставил несколько ссылок, которые расширяют картину и показывают диапазон за пределами трех основных работ.</p>
+              <h2>Опубликованные статьи, рассылки и B2B-тексты</h2>
+              <p>В полном архиве есть статьи для медиа, IT- и B2B-материалы, рассылки и учебные форматы. Эти ссылки расширяют картину за пределами трех основных работ и показывают прикладной диапазон.</p>
             </div>
 
             <div class="archive-grid">
@@ -1205,8 +1242,8 @@
           <div class="block-label">04 / Practice</div>
           <div class="block-body">
             <div class="block-head">
-              <h2>Обычно я нужен в трех форматах</h2>
-              <p>Иногда это один текст. Иногда серия материалов. Иногда редакторская система для команды, которая работает стабильно и предсказуемо.</p>
+              <h2>Услуги: редактура, ghostwriting, B2B-тексты и AI-контент</h2>
+              <p>Иногда это один текст. Иногда серия материалов. Иногда редакторская система для команды. Ниже собраны основные форматы, в которых ко мне приходят чаще всего.</p>
             </div>
 
             <div class="practice-grid">
@@ -1217,8 +1254,12 @@
                     <span>Колонки, письма, byline-материалы и тексты от первого лица с взрослым голосом и точной интонацией.</span>
                   </li>
                   <li>
-                    <strong>Редактура и narrative shaping</strong>
-                    <span>Для материалов, которым нужны форма, угол, внутренняя логика и собранный редакторский темп.</span>
+                    <strong>Редактура и longreads</strong>
+                    <span>Для материалов, которым нужны форма, угол, внутренняя логика, структура и собранный редакторский темп.</span>
+                  </li>
+                  <li>
+                    <strong>B2B- и IT-тексты</strong>
+                    <span>Статьи, объясняющие материалы, продуктовые и экспертные тексты для сложных тем, технической аудитории и делового читателя.</span>
                   </li>
                   <li>
                     <strong>AI content systems</strong>
@@ -1248,13 +1289,42 @@
           </div>
         </section>
 
+        <section class="block panel" id="faq" data-panel>
+          <div class="block-label">05 / FAQ</div>
+          <div class="block-body">
+            <div class="block-head">
+              <h2>Частые вопросы о редактуре, ghostwriting и B2B-текстах</h2>
+              <p>Этот блок нужен не только для удобства клиента, но и для ясности: чем точнее страница отвечает на типовые вопросы, тем проще поисковику понять, по каким задачам она релевантна.</p>
+            </div>
+
+            <div class="faq-grid">
+              <article class="faq-item">
+                <h3>С какими текстами я работаю</h3>
+                <p>С колонками, longreads, B2B-статьями, письмами, текстами от первого лица, объясняющими материалами для IT и AI, а также с редактурой уже написанных текстов.</p>
+              </article>
+              <article class="faq-item">
+                <h3>Беру ли IT, AI и сложные B2B-темы</h3>
+                <p>Да. В портфолио уже есть материалы про техподдержку, Managed Kubernetes, AI-контент и другие темы, где нужен перевод сложного языка в ясный текст без потери точности.</p>
+              </article>
+              <article class="faq-item">
+                <h3>Работаю ли как ghostwriter</h3>
+                <p>Да. Беру тексты от первого лица, founder voice, экспертные колонки и письма. В таких задачах важны голос, позиция, доверие и аккуратная работа с фактурой.</p>
+              </article>
+              <article class="faq-item">
+                <h3>На каких языках работаю</h3>
+                <p>На русском и английском. Часть портфолио собрана на английском, часть на русском. В обоих случаях задача одна: ясная структура, точный тон и нормальный читательский ритм.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section class="block panel" id="contact" data-panel>
-          <div class="block-label">05 / Contact</div>
+          <div class="block-label">06 / Contact</div>
           <div class="block-body">
             <div class="contact-panel">
               <div class="contact-copy">
-                <h2>Если нужен текст, который можно спокойно публиковать</h2>
-                <p>Пиши, если нужно собрать сильный материал, оформить экспертный голос или выстроить контент-процесс с AI. Беру задачи, где у текста есть вес, контекст и понятная цель.</p>
+                <h2>Заказать редактуру, ghostwriting или B2B-текст</h2>
+                <p>Пиши, если нужен редактор, ghostwriter или автор для сильного материала, экспертного голоса, статьи о сложной теме или контент-процесса с AI. Беру задачи, где у текста есть вес, контекст и понятная цель.</p>
                 <p class="footnote">Оптимальны точечные проекты, flagship-материалы, редакторские спринты, лекции и настройка более взрослого AI-контура.</p>
               </div>
 
