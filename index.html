@@ -896,6 +896,96 @@
       font-size: 0.94rem;
     }
 
+    .archive-portal {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 22px;
+      align-items: end;
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(23, 21, 20, 0.08);
+      background:
+        radial-gradient(circle at top right, rgba(123, 93, 68, 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(250, 248, 244, 0.98), rgba(245, 241, 234, 0.92) 52%, rgba(255, 255, 255, 0.96));
+      box-shadow: var(--card-shadow);
+    }
+
+    .archive-portal::before {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      background: rgba(123, 93, 68, 0.08);
+      border: 1px solid rgba(123, 93, 68, 0.14);
+    }
+
+    .archive-portal-copy {
+      display: grid;
+      gap: 12px;
+      max-width: 64ch;
+    }
+
+    .archive-portal-copy h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 2vw, 2.15rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .archive-portal-copy p {
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .archive-portal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .archive-portal-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(23, 21, 20, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .archive-portal-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(23, 21, 20, 0.94);
+      color: #f8f5ef;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 14px 28px -22px rgba(23, 21, 20, 0.42);
+    }
+
+    .archive-portal-link:hover {
+      color: #ffffff;
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .archive-portal-link span {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
     .practice-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
@@ -982,6 +1072,7 @@
       .ledger-row:hover,
       .work-row:hover,
       .archive-card:hover,
+      .archive-portal:hover,
       .faq-item:hover,
       .route-card:hover,
       .service-rows li:hover,
@@ -1006,6 +1097,7 @@
       .block,
       .proof-strip,
       .archive-grid,
+      .archive-portal,
       .routes-grid,
       .faq-grid,
       .practice-grid,
@@ -1333,12 +1425,27 @@
                     <a href="https://docs.google.com/document/d/1snraNwbS4Zu2gXHSnJBfwbq0TZjKNqIgaQdv-B4WuO4/edit?usp=sharing" target="_blank" rel="noopener noreferrer">План двухдневного тренинга</a>
                     <p>Программа по контент-маркетингу и нативной рекламе.</p>
                   </li>
-                  <li>
-                    <a href="https://three-tarn-dcc.notion.site/ba65b55aa0a44eb7aa3c807c945e8ffd" target="_blank" rel="noopener noreferrer">Полное портфолио в Notion</a>
-                    <p>Весь архив работ: YouTube, B2B, IT, SMM, Яндекс.Недвижимость и другие форматы.</p>
-                  </li>
                 </ul>
               </article>
+            </div>
+
+            <div class="archive-portal">
+              <div class="archive-portal-copy">
+                <div class="work-kind">Full archive</div>
+                <h3>Все портфолио в Notion</h3>
+                <p>Самый быстрый способ увидеть весь диапазон работ в одном месте: статьи, рассылки, лекции, YouTube, B2B, IT, SMM, Яндекс.Недвижимость и другие форматы.</p>
+                <div class="archive-portal-tags" aria-label="Что внутри архива">
+                  <span>Публикации</span>
+                  <span>Коммерческие тексты</span>
+                  <span>Лекции</span>
+                  <span>YouTube</span>
+                  <span>IT и B2B</span>
+                </div>
+              </div>
+              <a class="archive-portal-link" href="https://three-tarn-dcc.notion.site/ba65b55aa0a44eb7aa3c807c945e8ffd" target="_blank" rel="noopener noreferrer">
+                Открыть весь архив
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </section>
