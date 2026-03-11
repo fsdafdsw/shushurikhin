@@ -845,15 +845,49 @@
       z-index: 0;
     }
 
-    .archive-card--published .archive-list li:first-child a {
-      font-size: 1.1rem;
-      line-height: 1.18;
-      letter-spacing: -0.02em;
+    .archive-card--published .work-kind {
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .archive-lead {
+      display: grid;
+      gap: 8px;
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(123, 93, 68, 0.1);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+    }
+
+    .archive-lead-label {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--label);
+    }
+
+    .archive-lead a {
+      width: fit-content;
+      font-family: var(--serif);
+      font-size: 1.34rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 700;
       border-bottom-width: 2px;
     }
 
-    .archive-card--published .work-kind {
-      background: rgba(255, 255, 255, 0.86);
+    .archive-lead p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .archive-card--published .archive-list {
+      gap: 10px;
+    }
+
+    .archive-card--published .archive-list li {
+      padding-top: 10px;
     }
 
     .archive-card--lifecycle {
@@ -862,27 +896,53 @@
         linear-gradient(90deg, rgba(123, 93, 68, 0.04), transparent 28%);
     }
 
-    .archive-card--lifecycle .archive-list {
+    .archive-flow {
       counter-reset: archive-step;
-      gap: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .archive-card--lifecycle .archive-list li {
+    .archive-flow li {
       position: relative;
-      padding-top: 14px;
-      padding-left: 40px;
+      display: grid;
+      gap: 6px;
+      padding: 16px 16px 16px 54px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(23, 21, 20, 0.07);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
     }
 
-    .archive-card--lifecycle .archive-list li::before {
+    .archive-flow li::before {
       counter-increment: archive-step;
       content: counter(archive-step, decimal-leading-zero);
       position: absolute;
-      left: 0;
-      top: 14px;
+      left: 16px;
+      top: 17px;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(123, 93, 68, 0.11);
       font-family: var(--mono);
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
-      color: var(--label);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: rgba(123, 93, 68, 0.88);
+    }
+
+    .archive-flow a {
+      width: fit-content;
+      font-weight: 600;
+    }
+
+    .archive-flow p {
+      font-size: 0.94rem;
+      color: var(--muted);
     }
 
     .archive-card--lifecycle .work-kind {
@@ -915,27 +975,40 @@
       border-style: dashed;
     }
 
-    .archive-card--teaching .archive-list li {
+    .archive-notes {
+      display: grid;
+      gap: 12px;
+    }
+
+    .archive-note {
       position: relative;
-      padding-left: 18px;
-      border-top-style: dashed;
+      display: grid;
+      gap: 8px;
+      padding: 16px 16px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px dashed rgba(23, 21, 20, 0.11);
     }
 
-    .archive-card--teaching .archive-list li::before {
-      content: "/";
-      position: absolute;
-      left: 0;
-      top: 12px;
+    .archive-note-kind {
+      width: fit-content;
+      padding-bottom: 4px;
       font-family: var(--mono);
-      color: rgba(123, 93, 68, 0.7);
+      font-size: 0.73rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--label);
     }
 
-    .archive-card--teaching .archive-list li:first-child::before {
-      top: 0;
+    .archive-note a {
+      width: fit-content;
+      font-weight: 600;
     }
 
-    .archive-card--teaching .archive-list p {
+    .archive-note p {
       max-width: 30ch;
+      font-size: 0.94rem;
+      color: var(--muted);
     }
 
     .faq-item {
@@ -1508,11 +1581,12 @@
                 <div class="work-kind">Published</div>
                 <h3>Публикации</h3>
                 <p>Опубликованные тексты, где важны редактура, объяснение сложной темы и работа с широкой аудиторией.</p>
+                <div class="archive-lead">
+                  <div class="archive-lead-label">Featured material</div>
+                  <a href="https://vc.ru/story/242464-my-lidery-po-kachestvu-zvuka-no-po-prezhnemu-teryaem-pozicii-na-rynke-s-chego-nachinala-i-k-chemu-prishla-sennheiser" target="_blank" rel="noopener noreferrer">История Sennheiser</a>
+                  <p>vc.ru / брендовый материал с длинной дугой и понятной драматургией.</p>
+                </div>
                 <ul class="archive-list">
-                  <li>
-                    <a href="https://vc.ru/story/242464-my-lidery-po-kachestvu-zvuka-no-po-prezhnemu-teryaem-pozicii-na-rynke-s-chego-nachinala-i-k-chemu-prishla-sennheiser" target="_blank" rel="noopener noreferrer">История Sennheiser</a>
-                    <p>vc.ru / брендовый материал с длинной дугой и понятной драматургией.</p>
-                  </li>
                   <li>
                     <a href="https://itglobal.com/ru-ru/company/blog/how-works-tech-support/" target="_blank" rel="noopener noreferrer">Как работает техподдержка</a>
                     <p>ITGLOBAL / объясняющий текст о сложном процессе простым языком.</p>
@@ -1528,7 +1602,7 @@
                 <div class="work-kind">Lifecycle</div>
                 <h3>Рассылки и коммерция</h3>
                 <p>Тексты, которые работают в прямом контакте с аудиторией и завязаны на открываемость, интерес и действие.</p>
-                <ul class="archive-list">
+                <ul class="archive-flow">
                   <li>
                     <a href="https://drive.google.com/drive/folders/1a8ncu8WiZPgIk5w6IIg_ftGoFpvgdmHD?usp=sharing" target="_blank" rel="noopener noreferrer">Письма для Albato</a>
                     <p>Подборка писем для сервиса интеграций с разными задачами и ритмом коммуникации.</p>
@@ -1548,16 +1622,18 @@
                 <div class="work-kind">Teaching</div>
                 <h3>Лекции и тренинги</h3>
                 <p>Форматы, где важно уметь разложить редакторскую работу по шагам и внятно объяснить, как делаются нативные материалы и контент-маркетинг.</p>
-                <ul class="archive-list">
-                  <li>
+                <div class="archive-notes">
+                  <article class="archive-note">
+                    <div class="archive-note-kind">Talk</div>
                     <a href="https://youtu.be/fyBtVBHZz1E" target="_blank" rel="noopener noreferrer">Лекция для Яндекса</a>
                     <p>Публичное выступление о создании нативных материалов.</p>
-                  </li>
-                  <li>
+                  </article>
+                  <article class="archive-note">
+                    <div class="archive-note-kind">Program</div>
                     <a href="https://docs.google.com/document/d/1snraNwbS4Zu2gXHSnJBfwbq0TZjKNqIgaQdv-B4WuO4/edit?usp=sharing" target="_blank" rel="noopener noreferrer">План двухдневного тренинга</a>
                     <p>Программа по контент-маркетингу и нативной рекламе.</p>
-                  </li>
-                </ul>
+                  </article>
+                </div>
               </article>
             </div>
 
