@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: shushurikhin.vercel.app
+Sitemap: https://shushurikhin.vercel.app/sitemap.xml
