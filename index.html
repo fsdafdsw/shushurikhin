@@ -800,10 +800,142 @@
     }
 
     .archive-card {
+      position: relative;
+      overflow: hidden;
       display: grid;
-      gap: 14px;
-      padding: 22px;
+      gap: 16px;
+      padding: 24px 22px 22px;
       align-content: start;
+      isolation: isolate;
+    }
+
+    .archive-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 22px;
+      width: 54px;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(123, 93, 68, 0.42);
+      z-index: 0;
+    }
+
+    .archive-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .archive-card--published {
+      background:
+        radial-gradient(circle at 88% 18%, rgba(123, 93, 68, 0.08), transparent 22%),
+        linear-gradient(180deg, rgba(250, 248, 244, 0.94), rgba(245, 241, 234, 0.68));
+    }
+
+    .archive-card--published::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      border: 1px solid rgba(123, 93, 68, 0.1);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(123, 93, 68, 0.04));
+      transform: rotate(12deg);
+      z-index: 0;
+    }
+
+    .archive-card--published .archive-list li:first-child a {
+      font-size: 1.1rem;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      border-bottom-width: 2px;
+    }
+
+    .archive-card--published .work-kind {
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .archive-card--lifecycle {
+      background:
+        linear-gradient(180deg, rgba(249, 247, 242, 0.94), rgba(245, 241, 234, 0.72)),
+        linear-gradient(90deg, rgba(123, 93, 68, 0.04), transparent 28%);
+    }
+
+    .archive-card--lifecycle .archive-list {
+      counter-reset: archive-step;
+      gap: 0;
+    }
+
+    .archive-card--lifecycle .archive-list li {
+      position: relative;
+      padding-top: 14px;
+      padding-left: 40px;
+    }
+
+    .archive-card--lifecycle .archive-list li::before {
+      counter-increment: archive-step;
+      content: counter(archive-step, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      color: var(--label);
+    }
+
+    .archive-card--lifecycle .work-kind {
+      transform: translateX(6px);
+    }
+
+    .archive-card--teaching {
+      background:
+        linear-gradient(180deg, rgba(252, 249, 244, 0.96), rgba(245, 241, 234, 0.68)),
+        radial-gradient(circle at 14% 86%, rgba(123, 93, 68, 0.06), transparent 30%);
+    }
+
+    .archive-card--teaching::after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      width: 88px;
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(123, 93, 68, 0.34) 0 9px,
+        transparent 9px 14px
+      );
+      z-index: 0;
+    }
+
+    .archive-card--teaching .work-kind {
+      border-radius: 16px;
+      border-style: dashed;
+    }
+
+    .archive-card--teaching .archive-list li {
+      position: relative;
+      padding-left: 18px;
+      border-top-style: dashed;
+    }
+
+    .archive-card--teaching .archive-list li::before {
+      content: "/";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      font-family: var(--mono);
+      color: rgba(123, 93, 68, 0.7);
+    }
+
+    .archive-card--teaching .archive-list li:first-child::before {
+      top: 0;
+    }
+
+    .archive-card--teaching .archive-list p {
+      max-width: 30ch;
     }
 
     .faq-item {
@@ -1372,7 +1504,7 @@
             </div>
 
             <div class="archive-grid">
-              <article class="archive-card">
+              <article class="archive-card archive-card--published">
                 <div class="work-kind">Published</div>
                 <h3>Публикации</h3>
                 <p>Опубликованные тексты, где важны редактура, объяснение сложной темы и работа с широкой аудиторией.</p>
@@ -1392,7 +1524,7 @@
                 </ul>
               </article>
 
-              <article class="archive-card">
+              <article class="archive-card archive-card--lifecycle">
                 <div class="work-kind">Lifecycle</div>
                 <h3>Рассылки и коммерция</h3>
                 <p>Тексты, которые работают в прямом контакте с аудиторией и завязаны на открываемость, интерес и действие.</p>
@@ -1412,7 +1544,7 @@
                 </ul>
               </article>
 
-              <article class="archive-card">
+              <article class="archive-card archive-card--teaching">
                 <div class="work-kind">Teaching</div>
                 <h3>Лекции и тренинги</h3>
                 <p>Форматы, где важно уметь разложить редакторскую работу по шагам и внятно объяснить, как делаются нативные материалы и контент-маркетинг.</p>
