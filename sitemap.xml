@@ -14,7 +14,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://shushurikhin.vercel.app/en/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://shushurikhin.vercel.app/redaktor-dlya-it/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/en/editor-for-tech/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -26,7 +38,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://shushurikhin.vercel.app/en/founder-ghostwriter/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://shushurikhin.vercel.app/b2b-teksty/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/en/b2b-content/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +62,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://shushurikhin.vercel.app/en/longform-editing/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://shushurikhin.vercel.app/ai-kontent-s-redakturoy/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/en/ai-content-editorial-review/</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
