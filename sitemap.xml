@@ -5,19 +5,49 @@
 >
   <url>
     <loc>https://shushurikhin.vercel.app/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://shushurikhin.vercel.app/og-image.svg</image:loc>
-      <image:title>Вячеслав Шушурихин — редактор, ghostwriter и журналист</image:title>
+      <image:title>Вячеслав Шушурихин — редактор, AI-консультант и спикер</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://shushurikhin.vercel.app/en/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/spiker-po-neyrosetyam/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/lekcii-po-ii-dlya-kompaniy/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/ai-konsalting-dlya-komand/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/vorkshop-po-vibe-coding/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://shushurikhin.vercel.app/obuchenie-komand-rabote-s-ii/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://shushurikhin.vercel.app/redaktor-dlya-it/</loc>
